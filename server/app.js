@@ -5,7 +5,7 @@ const app = express();
 require('dotenv').config();
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin: "jobhive-frontend.vercel.app",
     credentials: true,
   })
 );

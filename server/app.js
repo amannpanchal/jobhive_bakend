@@ -5,11 +5,10 @@ const app = express();
 require('dotenv').config();
 app.use(
   cors({
-    origin: "jobhive-frontend.vercel.app",
+    origin: ["https://jobhive-frontend.vercel.app"],
     credentials: true,
   })
 );
-
 const { mongooseConnect } = require("../database/dbConnect");
 mongooseConnect();
 

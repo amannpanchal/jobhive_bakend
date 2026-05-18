@@ -3,12 +3,11 @@ const cookieParser = require('cookie-parser')
 const cors = require("cors");
 const app = express();
 require('dotenv').config();
-app.use(
-  cors({
-    origin: ["https://jobhivefrontend-upload.vercel.app"],
-    credentials: true,
-  })
-);
+
+
+app.use(cors({
+  origin : "*"
+}))
 const { mongooseConnect } = require("../database/dbConnect");
 mongooseConnect();
 
@@ -17,7 +16,6 @@ app.use(express.urlencoded({
     extended : true
 }))
 
-app.use(cookieParser());
 const userRouter = require('../routes/User')
 const applicationRouter = require('../routes/Application')
 const jobRouter = require('../routes/Job')
